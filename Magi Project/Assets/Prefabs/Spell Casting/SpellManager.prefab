@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &400662512901953078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400662512901953079}
+  - component: {fileID: 400662512901953064}
+  - component: {fileID: 400662512901953065}
+  - component: {fileID: 400662512901953066}
+  m_Layer: 0
+  m_Name: SpellManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400662512901953079
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400662512901953078}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &400662512901953064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400662512901953078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ea77a36ad42189409fea2cfdb6e9827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  hand: {fileID: 0}
+  wand: {fileID: 0}
+  health: 0
+  Health: {fileID: 0}
+  Mana: {fileID: 0}
+  fireball: {fileID: 8766845052362996337, guid: 20dac73594f1efb43ad44808b83ac151, type: 3}
+  iceSpike: {fileID: 4496983375130789053, guid: d6a5142e3f97051488600ba631b4d5e8, type: 3}
+  lux: {fileID: 8154630778248862243, guid: d615677f1036eb94abf11ece3e4641d6, type: 3}
+  maxMana: 100
+  currentMana: 100
+  manaRechargeRate: 10
+  timeToWaitForRecharge: 2
+  timeBetweenCasts: 0.25
+  castPoint: {fileID: 0}
+  hapticsController: {fileID: 400662512901953066}
+--- !u!114 &400662512901953065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400662512901953078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3bb7003c1bacc14391be5236e2c8c95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSpellPoint: {fileID: 0}
+  spellCastPoint: {fileID: 0}
+--- !u!114 &400662512901953066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400662512901953078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e75c17c7ad74d5468e62e0083082f78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftController: {fileID: 0}
+  rightController: {fileID: 0}
+  defaultAmplitude: 0.2
+  defaultDuration: 0.5

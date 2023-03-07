@@ -12,8 +12,8 @@ public class PlayerMagicSystem : MonoBehaviour
 {
     // PLAYER STUFF //
     [SerializeField] GameObject player;
-    [SerializeField] private Animator hand;
-    [SerializeField] GameObject wand;
+    //[SerializeField] private Animator hand;
+    //[SerializeField] GameObject wand;
 
     public float health;
 
@@ -24,7 +24,7 @@ public class PlayerMagicSystem : MonoBehaviour
     // SPELLS //
     [SerializeField] private Spell fireball;
     [SerializeField] private Spell iceSpike;
-    [SerializeField] private Spell lux;
+    //[SerializeField] private Spell lux;
     private Spell spellToCast;
 
     bool activeSpell = false;
@@ -120,7 +120,7 @@ public class PlayerMagicSystem : MonoBehaviour
         CastSpell();
     }
 
-    private void Light() //needs to toogle on and off
+   /* private void Light() //needs to toogle on and off
     {
         spellToCast = lux;
         if (activeSpell == false)
@@ -140,7 +140,7 @@ public class PlayerMagicSystem : MonoBehaviour
             Debug.Log("off");
             activeSpell = false;
         }
-    }
+    }*/
 
     //Method for when a spell is cast
     void CastSpell()
@@ -154,7 +154,7 @@ public class PlayerMagicSystem : MonoBehaviour
         {
             if (!castingMagic && hasEnoughMana)
             {
-                HarmPlayer();
+                //HarmPlayer();
                 castingMagic = true;
                 currentMana -= spellToCast.SpellToCast.ManaCost;
                 currentCastTimer = 0;
@@ -176,7 +176,7 @@ public class PlayerMagicSystem : MonoBehaviour
         }
     }
 
-    void HarmPlayer()
+   /* void HarmPlayer()
     {
         PlayerHealthComponent playerHealth = player.GetComponent<PlayerHealthComponent>();
         bool isHoldingWand = wand.GetComponent<UpdateCastPoint>().isHolding;
@@ -186,6 +186,6 @@ public class PlayerMagicSystem : MonoBehaviour
             playerHealth.TakeSpellDamage();
             hapticsController.SendHaptics(.2f, .5f);
         }
-    }
+    }*/
 
 }

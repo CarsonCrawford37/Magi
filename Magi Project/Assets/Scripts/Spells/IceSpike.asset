@@ -18,5 +18,6 @@ MonoBehaviour:
   Lifetime: 2
   Speed: 30
   SpellRadius: 0.5
-  HitNoise: {fileID: 8300000, guid: ec8935bf7a174464c84cf6a175451824, type: 3}
-  HitParticleSystem: {fileID: 410626282378858730, guid: 78a81a8bbdb294043a45e080ca8be2da, type: 3}
+  HitNoise: {fileID: 8300000, guid: c318703721fef2f4e93d65e7311c313d, type: 3}
+  HitParticleSystem: {fileID: 410626282378858730, guid: 78a81a8bbdb294043a45e080ca8be2da,
+    type: 3}

@@ -45,7 +45,7 @@ public class PlayerMagicSystem : MonoBehaviour
 
     //[SerializeField] private HapticsController hapticsController;
     private HapticsController hapticsController;
-
+    private Animator playerAnim;
 
     // VOICE COMMAND SYSTEM //
     private KeywordRecognizer keywordRecognizer;
@@ -55,12 +55,15 @@ public class PlayerMagicSystem : MonoBehaviour
     private void Awake()
     {
         currentMana = maxMana;
-        hapticsController = GetComponent<HapticsController>();
+        
     }
 
     //When game starts, add spell phrases to dictionary and start listening for them
     private void Start()
     {
+        hapticsController = GetComponent<HapticsController>();
+        playerAnim = player.GetComponent<Animator>();
+
         actions.Add("ignis", Fireball);
         actions.Add("gelu", Icespike);
         //actions.Add("lux", Light);
@@ -154,6 +157,8 @@ public class PlayerMagicSystem : MonoBehaviour
         }*/
        /* else
         {*/
+
+
             if (!castingMagic && hasEnoughMana)
             {
                 //HarmPlayer();

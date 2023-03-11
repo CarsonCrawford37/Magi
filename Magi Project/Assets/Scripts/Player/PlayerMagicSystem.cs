@@ -43,7 +43,9 @@ public class PlayerMagicSystem : MonoBehaviour
     private bool castingMagic = false;
     bool hasEnoughMana;
 
-    [SerializeField] private HapticsController hapticsController;
+    //[SerializeField] private HapticsController hapticsController;
+    private HapticsController hapticsController;
+
 
     // VOICE COMMAND SYSTEM //
     private KeywordRecognizer keywordRecognizer;
@@ -53,6 +55,7 @@ public class PlayerMagicSystem : MonoBehaviour
     private void Awake()
     {
         currentMana = maxMana;
+        hapticsController = GetComponent<HapticsController>();
     }
 
     //When game starts, add spell phrases to dictionary and start listening for them
@@ -89,7 +92,6 @@ public class PlayerMagicSystem : MonoBehaviour
             {
                 currentMana += manaRechargeRate * Time.deltaTime;
                 if (currentMana > maxMana) currentMana = maxMana;
-
             }
         }
 
@@ -146,12 +148,12 @@ public class PlayerMagicSystem : MonoBehaviour
     void CastSpell()
     {
         hasEnoughMana = currentMana - spellToCast.SpellToCast.ManaCost >= 0f; //if not work put in update
-        if (activeSpell == true)
+       /* if (activeSpell == true)
         {
 
-        }
-        else
-        {
+        }*/
+       /* else
+        {*/
             if (!castingMagic && hasEnoughMana)
             {
                 //HarmPlayer();
@@ -173,7 +175,7 @@ public class PlayerMagicSystem : MonoBehaviour
                 hapticsController.SendHaptics(.3f, .7f);
             }
 
-        }
+        //}
     }
 
    /* void HarmPlayer()

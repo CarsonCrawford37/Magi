@@ -14,7 +14,7 @@ public class Spell : MonoBehaviour
     private Rigidbody myRigidbody;
 
     private void Awake()
-    {    
+    {
         // Gets the sphere collider and rigidbody components from the gameobject the script is assigned to
         myCollider = GetComponent<SphereCollider>();
         myCollider.isTrigger = true;
@@ -39,9 +39,9 @@ public class Spell : MonoBehaviour
         //Apply hit particle effects
         //Apply sound effects
 
-        // If projectile hits a gameobject tagged with enemy, remove health based off of damage from spell
         if (!other.gameObject.CompareTag("Player"))
         {
+            // If projectile hits a gameobject tagged with enemy, remove health based off of damage from spell
             if (other.gameObject.CompareTag("Enemy"))
             {
                 // Damage Enemy
@@ -54,6 +54,11 @@ public class Spell : MonoBehaviour
 
                 // Play hit sound
             }
+            else if (other.gameObject.CompareTag("destructable") && gameObject.tag == "fireball")
+            {
+                BurnableScript burnScript = other.gameObject.GetComponent<BurnableScript>();
+                burnScript.isBurning = true;
+            }
             Destroy(this.gameObject);
 
             Vector3 GameObjectsPos = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
@@ -62,6 +67,7 @@ public class Spell : MonoBehaviour
 
             ParticleSystem psClone = Instantiate(SpellToCast.HitParticleSystem, transform.position, transform.rotation); //Quaternion.Euler(Quaternion.identity.x, Quaternion.identity.y + 90, Quaternion.identity.z)
             Destroy(psClone.gameObject, 0.5f);
+
         }
     }
 }

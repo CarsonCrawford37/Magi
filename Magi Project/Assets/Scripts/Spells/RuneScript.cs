@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class RuneScript : MonoBehaviour
 {
     [SerializeField] string rune;
     [SerializeField] SpellBookManager spellBook;
+    [SerializeField] VisualEffect effect;
 
     private AudioSource runeSound;
     private SphereCollider runeCol;
@@ -46,6 +48,7 @@ public class RuneScript : MonoBehaviour
             runeSound.Play();
             runeCol.enabled = false;
             fadingLight = true;
+            effect.Stop();
         }
     }
 

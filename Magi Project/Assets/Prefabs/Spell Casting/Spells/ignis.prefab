@@ -22,6 +22,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4744153427108500750, guid: 8846bbd1a4769ac41a103f379033884c,
+        type: 3}
+      propertyPath: m_TagString
+      value: fireball
+      objectReference: {fileID: 0}
     - target: {fileID: 8948732641388928603, guid: 8846bbd1a4769ac41a103f379033884c,
         type: 3}
       propertyPath: m_RootOrder

@@ -12,7 +12,7 @@ public class PlayerMagicSystem : MonoBehaviour
 {
     // PLAYER STUFF //
     [SerializeField] GameObject player;
-    //[SerializeField] private Animator hand;
+    [SerializeField] private Animator hand;
     //[SerializeField] GameObject wand;
 
     public float health;
@@ -151,14 +151,14 @@ public class PlayerMagicSystem : MonoBehaviour
     void CastSpell()
     {
         hasEnoughMana = currentMana - spellToCast.SpellToCast.ManaCost >= 0f; //if not work put in update
-       /* if (activeSpell == true)
-        {
+        /* if (activeSpell == true)
+         {
 
-        }*/
-       /* else
-        {*/
+         }*/
+        /* else
+         {*/
 
-
+        hand.Play("SpellCast");
             if (!castingMagic && hasEnoughMana)
             {
                 //HarmPlayer();

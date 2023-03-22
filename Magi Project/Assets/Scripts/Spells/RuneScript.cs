@@ -1,6 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using UnityEditor.PackageManager.UI;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.VFX;
 
 public class RuneScript : MonoBehaviour
@@ -8,6 +12,8 @@ public class RuneScript : MonoBehaviour
     [SerializeField] string rune;
     [SerializeField] SpellBookManager spellBook;
     [SerializeField] VisualEffect effect;
+    [SerializeField] TextMeshProUGUI runeText;
+    public Color newColor;
 
     private AudioSource runeSound;
     private SphereCollider runeCol;
@@ -21,7 +27,8 @@ public class RuneScript : MonoBehaviour
         runeSound = GetComponent<AudioSource>();
         runeCol = GetComponent<SphereCollider>();
         glow = GetComponent<Light>();
-    }
+/*        runeText = GetComponent<TextMeshProUGUI>();
+*/    }
 
     private void Update()
     {
@@ -30,7 +37,7 @@ public class RuneScript : MonoBehaviour
             if (fadeTimer < fadeDuration)
             {
                 glow.intensity = Mathf.Lerp(glow.intensity, 0f, fadeTimer / fadeDuration);
-
+                runeText.color = Color.Lerp(runeText.color, newColor, fadeTimer / fadeDuration);
                 fadeTimer += Time.deltaTime;
             }
             else

@@ -7,7 +7,7 @@ using UnityEngine;
 public class Hand : MonoBehaviour
 {    
     Animator animator;
-
+    SkinnedMeshRenderer mesh;
     public float speed;
     private float gripTarget;
     private float gripCurrent;
@@ -19,6 +19,7 @@ public class Hand : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        mesh = GetComponentInChildren<SkinnedMeshRenderer>();
     }
 
     private void Update()
@@ -52,5 +53,8 @@ public class Hand : MonoBehaviour
         }
     }
 
-   
+   public void TooggleVisibility()
+    {
+        mesh.enabled = !mesh.enabled;
+    }
 }

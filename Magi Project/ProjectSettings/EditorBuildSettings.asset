@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/Magi.unity
+    guid: 1af8f92c293336d47bb548a909c8ce19
+  - enabled: 1
+    path: Assets/Scenes/PassedOut.unity
+    guid: 7dfaf64729d342d4da2b08d9171cb70b
+  - enabled: 1
+    path: Assets/Scenes/EndDemo.unity
+    guid: 3e05f6d6ffbf93d4e8518bba65d44e87
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5564ce41cb7b51147a8b4eba2b847ed9,
       type: 2}

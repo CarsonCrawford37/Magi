@@ -30,7 +30,6 @@ public class EnemySpawnManager : MonoBehaviour
     IEnumerator RespawnSpawnEnemy()
     {
         //enemyDied = false;
-        //Debug.Log("Im being called");
         yield return new WaitForSeconds(5);
 
         enemy.SetActive(true);

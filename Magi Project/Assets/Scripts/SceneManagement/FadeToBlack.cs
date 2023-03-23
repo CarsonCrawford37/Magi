@@ -7,12 +7,13 @@ public class FadeToBlack : MonoBehaviour
     public bool fadeOnStart = true;
     public float fadeDuration = 2;
     public Color fadeColor;
-    private Renderer rend;
+    //private Renderer rend;
+    public Material FadeMat;
 
     // Start is called before the first frame update
     void Start()
     {
-        rend = GetComponent<Renderer>();
+        //FadeMat = GetComponent<Renderer>();
         if (fadeOnStart)
         {
             FadeIn();
@@ -36,16 +37,16 @@ public class FadeToBlack : MonoBehaviour
 
     public IEnumerator FadeRoutine(float alphaIn, float alphaOut)
     {
-        Debug.Log("hi");
-
+/*        Debug.Log("hi");
+*/
         float timer = 0;
         while (timer <= fadeDuration)
         {
-
-            Color newColor = fadeColor;
+/*            Debug.Log("Hello");
+*/            Color newColor = fadeColor;
             newColor.a = Mathf.Lerp(alphaIn, alphaOut, timer / fadeDuration);
 
-            rend.material.SetColor("_Color", newColor);
+            FadeMat.color = newColor;
 
             timer += Time.deltaTime;
             yield return null;
@@ -53,7 +54,7 @@ public class FadeToBlack : MonoBehaviour
 
         Color newColor2 = fadeColor;
         newColor2.a = alphaOut;
-        rend.material.SetColor("_Color", newColor2);
+        FadeMat.color = newColor2;
     }
 
 

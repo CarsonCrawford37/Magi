@@ -6,6 +6,7 @@ using UnityEngine;
 public class BurnableScript : MonoBehaviour
 {
     private Material material;
+    public AudioSource source;
     public bool isBurning = false;
     private float burnTimer = 0f;
     public float burnDuration = 6f;
@@ -14,7 +15,7 @@ public class BurnableScript : MonoBehaviour
     void Start()
     {
         material = GetComponent<MeshRenderer>().sharedMaterial;
-
+        source.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class BurnableScript : MonoBehaviour
     {
         if (isBurning)
         {
-
+            source.Play();
             if (burnTimer < burnDuration)
             {
                 material.SetFloat("_Burn_Amount", Mathf.Lerp(0f, 1f, burnTimer / burnDuration));

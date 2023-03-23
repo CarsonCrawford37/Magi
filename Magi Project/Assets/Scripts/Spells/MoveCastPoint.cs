@@ -9,13 +9,14 @@ public class MoveCastPoint : MonoBehaviour
 
     void Update()
     {
-        spellCastPoint.position = defaultSpellPoint.position;
-        spellCastPoint.rotation = defaultSpellPoint.rotation;
+       /* spellCastPoint.position = defaultSpellPoint.position;
+        spellCastPoint.rotation = defaultSpellPoint.rotation;*/
     }
 
     public void ChangeCastPoint(Transform newSpellCastPoint)
     {
-        spellCastPoint.position = newSpellCastPoint.position;
+/*        Debug.Log("ChangeCastPoint being called");
+*/        spellCastPoint.position = newSpellCastPoint.position;
         spellCastPoint.rotation = newSpellCastPoint.rotation;
 
     }

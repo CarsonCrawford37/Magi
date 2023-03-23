@@ -12,8 +12,8 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: Magi Project
+  companyName: Crawford Studios
+  productName: Magi Project (Demo)
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -135,7 +135,8 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 0.1.0
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: -8731071115918614541, guid: b956ee57b699c7f42ad0ddea54f0a74e, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -794,11 +795,11 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: com.unity.template-starter-kit
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: 
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: 
-  metroCertificateIssuer: 
-  metroCertificateNotAfter: 0000000000000000
+  metroCertificateSubject: Crawford Studios
+  metroCertificateIssuer: Crawford Studios
+  metroCertificateNotAfter: 80c5681e587cda01
   metroApplicationDescription: com.unity.template-starter-kit
   wsaImages: {}
   metroTileShortName: Magi Project
@@ -817,7 +818,8 @@ PlayerSettings:
   platformCapabilities:
     WindowsStoreApps:
       Microphone: True
-  metroTargetDeviceFamilies: {}
+  metroTargetDeviceFamilies:
+    Desktop: True
   metroFTAName: 
   metroFTAFileTypes: []
   metroProtocolName: 

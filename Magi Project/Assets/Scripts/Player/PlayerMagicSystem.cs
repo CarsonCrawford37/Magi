@@ -13,7 +13,7 @@ public class PlayerMagicSystem : MonoBehaviour
     // PLAYER STUFF //
     [SerializeField] GameObject player;
     [SerializeField] private Animator hand;
-    //[SerializeField] GameObject wand;
+    [SerializeField] GameObject wand;
 
     public float health;
 
@@ -27,7 +27,6 @@ public class PlayerMagicSystem : MonoBehaviour
     //[SerializeField] private Spell lux;
     private Spell spellToCast;
 
-    bool activeSpell = false;
 
     // MANA SYSTEM //
     [SerializeField] private float maxMana = 100f;
@@ -45,7 +44,6 @@ public class PlayerMagicSystem : MonoBehaviour
 
     //[SerializeField] private HapticsController hapticsController;
     private HapticsController hapticsController;
-    private Animator playerAnim;
 
     // VOICE COMMAND SYSTEM //
     private KeywordRecognizer keywordRecognizer;
@@ -62,7 +60,7 @@ public class PlayerMagicSystem : MonoBehaviour
     private void Start()
     {
         hapticsController = GetComponent<HapticsController>();
-        playerAnim = player.GetComponent<Animator>();
+        hand = hand.GetComponent<Animator>();
 
         actions.Add("ignis", Fireball);
         actions.Add("gelu", Icespike);
@@ -151,17 +149,11 @@ public class PlayerMagicSystem : MonoBehaviour
     void CastSpell()
     {
         hasEnoughMana = currentMana - spellToCast.SpellToCast.ManaCost >= 0f; //if not work put in update
-        /* if (activeSpell == true)
-         {
-
-         }*/
-        /* else
-         {*/
 
         hand.Play("SpellCast");
             if (!castingMagic && hasEnoughMana)
             {
-                //HarmPlayer();
+               HarmPlayer();
                 castingMagic = true;
                 currentMana -= spellToCast.SpellToCast.ManaCost;
                 currentCastTimer = 0;
@@ -183,7 +175,7 @@ public class PlayerMagicSystem : MonoBehaviour
         //}
     }
 
-   /* void HarmPlayer()
+    void HarmPlayer()
     {
         PlayerHealthComponent playerHealth = player.GetComponent<PlayerHealthComponent>();
         bool isHoldingWand = wand.GetComponent<UpdateCastPoint>().isHolding;
@@ -193,6 +185,6 @@ public class PlayerMagicSystem : MonoBehaviour
             playerHealth.TakeSpellDamage();
             hapticsController.SendHaptics(.2f, .5f);
         }
-    }*/
+    }
 
 }

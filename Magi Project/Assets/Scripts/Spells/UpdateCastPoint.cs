@@ -18,7 +18,7 @@ public class UpdateCastPoint : MonoBehaviour
         {
             spellManager.GetComponent<MoveCastPoint>().ChangeCastPoint(newSpellCastPoint);
         }
-        else if(isHolding == false)
+        else if (isHolding == false)
         {
             spellManager.GetComponent<MoveCastPoint>().ChangeCastPoint(defaultSpellCastPoint);
         }

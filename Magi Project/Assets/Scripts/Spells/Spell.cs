@@ -44,6 +44,7 @@ public class Spell : MonoBehaviour
             // If projectile hits a gameobject tagged with enemy, remove health based off of damage from spell
             if (other.gameObject.CompareTag("Enemy"))
             {
+                //Debug.Log("Enemy");
                 // Damage Enemy
                 HealthComponent enemyHealth = other.GetComponent<HealthComponent>();
                 float damage = Random.Range(SpellToCast.MinDamageAmount, SpellToCast.MaxDamageAmount);

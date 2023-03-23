@@ -21,7 +21,7 @@ public class HealthComponent : MonoBehaviour
     public void TakeDamage(float damageToApply)
     {
         currentHealth -= damageToApply;
-        anim.Play("hit");
+        anim.Play("Impact");
         if (currentHealth <= 0)
         {
             ParticleSystem psClone = Instantiate(ps, transform.position, Quaternion.Euler(0, 90, 0));

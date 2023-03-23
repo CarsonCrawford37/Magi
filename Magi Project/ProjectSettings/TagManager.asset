@@ -6,11 +6,12 @@ TagManager:
   tags:
   - destructable
   - fireball
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Wand
   - Water
   - UI
   - 

@@ -5478,6 +5478,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  healthRechargeRate: 15
+  timeToWaitForRecharge: 1
   hurtOverlay: {fileID: 2100000, guid: bad12e3e4ac4a894cada06d5d3bfc70f, type: 2}
   blackScreen: {fileID: 710825515}
 --- !u!143 &1489704178

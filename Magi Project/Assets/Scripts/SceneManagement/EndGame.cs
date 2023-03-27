@@ -17,7 +17,7 @@ public class EndGame : MonoBehaviour
     }
     public IEnumerator WaitForNextScene()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene("EndDemo");
     }
 

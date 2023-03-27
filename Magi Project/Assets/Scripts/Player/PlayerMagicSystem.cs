@@ -16,6 +16,7 @@ public class PlayerMagicSystem : MonoBehaviour
     [SerializeField] GameObject wand;
 
     public float health;
+    PlayerHealthComponent playerHealth;
 
     // PLAYER UI //
     public TextMeshProUGUI Health;
@@ -36,6 +37,8 @@ public class PlayerMagicSystem : MonoBehaviour
     private float currentManaRechargeTimer;
     [SerializeField] private float timeBetweenCasts = 0.25f;
     private float currentCastTimer;
+
+    // HEALTH SYSTEM //
 
     [SerializeField] private Transform castPoint;
 
@@ -95,6 +98,10 @@ public class PlayerMagicSystem : MonoBehaviour
                 if (currentMana > maxMana) currentMana = maxMana;
             }
         }
+
+        if(health < 100)
+            playerHealth.HealthRecharge();
+
 
         Health.text = "Health: " + health.ToString("N0");
         Mana.text = "Mana: " + currentMana.ToString("N0");
@@ -177,7 +184,7 @@ public class PlayerMagicSystem : MonoBehaviour
 
     void HarmPlayer()
     {
-        PlayerHealthComponent playerHealth = player.GetComponent<PlayerHealthComponent>();
+        playerHealth = player.GetComponent<PlayerHealthComponent>();
         bool isHoldingWand = wand.GetComponent<UpdateCastPoint>().isHolding;
         Debug.Log(isHoldingWand);
         if (!isHoldingWand)
@@ -185,6 +192,8 @@ public class PlayerMagicSystem : MonoBehaviour
             playerHealth.TakeSpellDamage();
             hapticsController.SendHaptics(.2f, .5f);
         }
+
+
     }
 
 }

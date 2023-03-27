@@ -7,6 +7,9 @@ public class PlayerHealthComponent : MonoBehaviour
 {
     [SerializeField] private float maxHealth = 100f;
     public float currentHealth;
+    [SerializeField] private float healthRechargeRate = 15f;
+    [SerializeField] private float timeToWaitForRecharge = 1f;
+    private float currentHealthRechargeTimer;
 
     [SerializeField] public Material hurtOverlay;
     public FadeToBlack blackScreen;
@@ -18,25 +21,22 @@ public class PlayerHealthComponent : MonoBehaviour
         color.a = 0f;
     }
 
-    // Update is called once per frame
-    public void TakeSpellDamage()
+    private void Update()
     {
-        color = hurtOverlay.color;
-
-        currentHealth -= 15;
-        if (currentHealth <= 0)
-        {
-            blackScreen.FadeOut();
-            StartCoroutine(WaitForNextScene());
-        }
-
         switch (currentHealth)
         {
-            case 55:
-                color.a = .25f;
+            case 100:
+                color.a = 0f;
                 hurtOverlay.color = color;
                 break;
-
+            case 56:
+                color.a = 0f;
+                hurtOverlay.color = color;
+                break;
+            case 55:
+                color.a = .15f;
+                hurtOverlay.color = color;
+                break;
             case 40:
                 color.a = .5f;
                 hurtOverlay.color = color;
@@ -51,13 +51,40 @@ public class PlayerHealthComponent : MonoBehaviour
                 color.a = 1.5f;
                 hurtOverlay.color = color;
                 break;
-            case -5:
+            case < 0:
                 color.a = 0f;
                 hurtOverlay.color = color;
                 break;
-
         }
+    }
+
+    // Update is called once per frame
+    public void TakeSpellDamage()
+    {
+        color = hurtOverlay.color;
+
+        currentHealth -= 15;
+        if (currentHealth <= 0)
+        {
+            blackScreen.FadeOut();
+            StartCoroutine(WaitForNextScene());
+        }
+
+        
         Debug.Log("Player Health: " + currentHealth);
+    }
+
+    public void HealthRecharge()
+    {
+        if (currentHealth < maxHealth)
+        {
+            currentHealthRechargeTimer += Time.deltaTime;
+            if (currentHealthRechargeTimer > timeToWaitForRecharge)
+            {
+                currentHealth += healthRechargeRate * Time.deltaTime;
+                if (currentHealth > maxHealth) currentHealth = maxHealth;
+            }
+        }
     }
 
     public IEnumerator WaitForNextScene()

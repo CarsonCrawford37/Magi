@@ -6,11 +6,17 @@ using UnityEngine.Windows.Speech;
 public class UpdateCastPoint : MonoBehaviour
 {
     public GameObject spellManager;
+    public Material wand;
 
     public Transform newSpellCastPoint;
     public Transform defaultSpellCastPoint;
 
     public bool isHolding = false;
+
+    private void Start()
+    {
+        wand = GetComponent<MeshRenderer>().sharedMaterial;
+    }
 
     private void Update()
     {
@@ -27,11 +33,13 @@ public class UpdateCastPoint : MonoBehaviour
     public void IsHeld()
     {
         isHolding = true;
+        wand.SetFloat("_Outline", 0.0f);
     }
 
     public void IsDropped()
     {
         isHolding = false;
+        wand.SetFloat("_Outline", 1.0f);
     }
 
 }

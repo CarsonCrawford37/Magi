@@ -6,17 +6,25 @@ public class MenuScript : MonoBehaviour
 {
     [SerializeField] GameObject MenuObj;
     [SerializeField] GameObject OptionsObj;
-   public void ToogleMenu()
+    [SerializeField] ToggleRay rightHandRay;
+
+    private void Start()
+    {
+        rightHandRay.GetComponent<ToggleRay>();
+    }
+    public void ToogleMenu()
     {
         if (gameObject.activeInHierarchy)
         {
             gameObject.SetActive(false);
             MenuObj.SetActive(true);
             OptionsObj.SetActive(false);
+            rightHandRay.DeactivateRay();
         }
         else
         {
             gameObject.SetActive(true);
+            rightHandRay.ActivateRay();
         }
     }
 }

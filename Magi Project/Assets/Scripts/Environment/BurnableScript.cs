@@ -7,6 +7,8 @@ public class BurnableScript : MonoBehaviour
 {
     private Material material;
     public AudioSource source;
+    public Light burnLight;
+
     public bool isBurning = false;
     private float burnTimer = 0f;
     public float burnDuration = 6f;
@@ -23,9 +25,12 @@ public class BurnableScript : MonoBehaviour
     {
         if (isBurning)
         {
+            burnLight.gameObject.SetActive(true);
             source.Play();
+            material.SetFloat("_Outline", 0);
             if (burnTimer < burnDuration)
             {
+                burnLight.intensity = Mathf.Lerp(burnLight.intensity, 0f, burnTimer / burnDuration);
                 material.SetFloat("_Burn_Amount", Mathf.Lerp(0f, 1f, burnTimer / burnDuration));
                 burnTimer += Time.deltaTime;
             }
@@ -33,6 +38,7 @@ public class BurnableScript : MonoBehaviour
             {
                 gameObject.SetActive(false);
                 material.SetFloat("_Burn_Amount", 0);
+                material.SetFloat("_Outline", 1);
                 Destroy(gameObject);
             }
         }

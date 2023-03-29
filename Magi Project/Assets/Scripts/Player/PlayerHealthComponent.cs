@@ -18,12 +18,44 @@ public class PlayerHealthComponent : MonoBehaviour
     private void Awake()
     {
         currentHealth = maxHealth;
+        color.r = 1;
         color.a = 0f;
     }
 
     private void Update()
     {
-        switch (currentHealth)
+        if(currentHealth >= 56)
+        {
+            color.a = 0f;
+            hurtOverlay.color = color;
+        }
+        else if(55 >= currentHealth && currentHealth >= 41)
+        {
+            color.a = .15f;
+            hurtOverlay.color = color;
+        }
+        else if (40 >= currentHealth && currentHealth >= 26)
+        {
+            color.a = .5f;
+            hurtOverlay.color = color;
+        }
+        else if (25 >= currentHealth && currentHealth >= 11)
+        {
+            color.a = 1f;
+            hurtOverlay.color = color;
+        }
+        else if (10 >= currentHealth && currentHealth >= 1)
+        {
+            color.a = 1.5f;
+            hurtOverlay.color = color;
+        }
+        else if(currentHealth <= 0)
+        {
+            color.a = 0f;
+            hurtOverlay.color = color;
+        }
+
+/*        switch (currentHealth)
         {
             case 100:
                 color.a = 0f;
@@ -56,13 +88,13 @@ public class PlayerHealthComponent : MonoBehaviour
                 hurtOverlay.color = color;
                 break;
         }
-    }
+*/    }
 
     // Update is called once per frame
     public void TakeSpellDamage()
     {
         color = hurtOverlay.color;
-
+        Debug.Log(hurtOverlay.color);
         currentHealth -= 15;
         if (currentHealth <= 0)
         {

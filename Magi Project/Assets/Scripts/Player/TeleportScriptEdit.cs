@@ -30,7 +30,7 @@ public class TeleportScriptEdit : MonoBehaviour
     }
 
     // Update is called once per frame
-    [System.Obsolete]
+    //[System.Obsolete]
     void Update()
     {
         if (!isActive)
@@ -39,7 +39,8 @@ public class TeleportScriptEdit : MonoBehaviour
         if (thumbstick.triggered)
             return;
 
-        if(!rayInteractor.GetCurrentRaycastHit(out RaycastHit hit))
+        //if(!rayInteractor.GetCurrentRaycastHit(out RaycastHit hit))
+        if(!rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit))
         {
             rayInteractor.enabled=false;
             isActive = false;

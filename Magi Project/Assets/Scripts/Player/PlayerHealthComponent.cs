@@ -31,7 +31,7 @@ public class PlayerHealthComponent : MonoBehaviour
         }
         else if(55 >= currentHealth && currentHealth >= 41)
         {
-            color.a = .15f;
+            color.a = .25f;
             hurtOverlay.color = color;
         }
         else if (40 >= currentHealth && currentHealth >= 26)
@@ -54,47 +54,13 @@ public class PlayerHealthComponent : MonoBehaviour
             color.a = 0f;
             hurtOverlay.color = color;
         }
-
-/*        switch (currentHealth)
-        {
-            case 100:
-                color.a = 0f;
-                hurtOverlay.color = color;
-                break;
-            case 56:
-                color.a = 0f;
-                hurtOverlay.color = color;
-                break;
-            case 55:
-                color.a = .15f;
-                hurtOverlay.color = color;
-                break;
-            case 40:
-                color.a = .5f;
-                hurtOverlay.color = color;
-                break;
-
-            case 25:
-                color.a = 1f;
-                hurtOverlay.color = color;
-                break;
-
-            case 10:
-                color.a = 1.5f;
-                hurtOverlay.color = color;
-                break;
-            case < 0:
-                color.a = 0f;
-                hurtOverlay.color = color;
-                break;
-        }
-*/    }
+    }
 
     // Update is called once per frame
     public void TakeSpellDamage()
     {
         color = hurtOverlay.color;
-        Debug.Log(hurtOverlay.color);
+        //Debug.Log(hurtOverlay.color);
         currentHealth -= 15;
         if (currentHealth <= 0)
         {

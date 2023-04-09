@@ -15,7 +15,7 @@ public class UpdateCastPoint : MonoBehaviour
 
     private void Start()
     {
-        wand = GetComponent<MeshRenderer>().sharedMaterial;
+        //wand = GetComponent<MeshRenderer>().sharedMaterial;
     }
 
     private void Update()

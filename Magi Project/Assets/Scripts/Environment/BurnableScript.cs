@@ -8,6 +8,7 @@ public class BurnableScript : MonoBehaviour
     private Material material;
     public AudioSource source;
     public Light burnLight;
+    private Collider col;
 
     public bool isBurning = false;
     private float burnTimer = 0f;
@@ -18,6 +19,7 @@ public class BurnableScript : MonoBehaviour
     {
         material = GetComponent<MeshRenderer>().sharedMaterial;
         source.GetComponent<AudioSource>();
+        col = GetComponent<Collider>();
     }
 
     // Update is called once per frame
@@ -26,6 +28,7 @@ public class BurnableScript : MonoBehaviour
         if (isBurning)
         {
             burnLight.gameObject.SetActive(true);
+            col.enabled = false;
             source.Play();
             material.SetFloat("_Outline", 0);
             if (burnTimer < burnDuration)

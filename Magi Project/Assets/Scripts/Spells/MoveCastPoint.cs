@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveCastPoint : MonoBehaviour
 {
-    [SerializeField] private Transform defaultSpellPoint;
+    //[SerializeField] private Transform defaultSpellPoint;
     [SerializeField] private Transform spellCastPoint;
 
     void Update()

@@ -30,7 +30,7 @@ public class HolsterMove : MonoBehaviour
 
     private void UpdateBodySocketHeight(bodySocket bodySocket)
     {
-        bodySocket.gameObject.transform.position = new Vector3(bodySocket.gameObject.transform.position.x, camPos.y * bodySocket.heightRatio, bodySocket.gameObject.transform.position.z);
+        bodySocket.gameObject.transform.position = new Vector3(bodySocket.gameObject.transform.position.x, camPos.y - bodySocket.heightRatio, bodySocket.gameObject.transform.position.z);
     }
 
     private void UpdateSocketInventory()

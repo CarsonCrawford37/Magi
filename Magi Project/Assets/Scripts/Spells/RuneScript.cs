@@ -9,6 +9,8 @@ using UnityEngine.VFX;
 public class RuneScript : MonoBehaviour
 {
     [SerializeField] string rune;
+    [SerializeField] string pronuciation;
+    [SerializeField] string description;
     [SerializeField] SpellBookManager spellBook;
     [SerializeField] VisualEffect effect;
     [SerializeField] TextMeshProUGUI runeText;
@@ -50,7 +52,7 @@ public class RuneScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            spellBook.AddSpellToBook(rune);
+            spellBook.AddSpellToBook(rune, pronuciation, description);
             runeSound.Play();
             runeCol.enabled = false;
             fadingLight = true;

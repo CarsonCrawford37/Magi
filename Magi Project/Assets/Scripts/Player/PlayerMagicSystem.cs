@@ -45,7 +45,8 @@ public class PlayerMagicSystem : MonoBehaviour
     private bool castingMagic = false;
     bool hasEnoughMana;
 
-    //[SerializeField] private HapticsController hapticsController;
+    // HAPTICS //
+    [SerializeField] private HandController rHandController;
     private HapticsController hapticsController;
 
     // VOICE COMMAND SYSTEM //
@@ -63,7 +64,7 @@ public class PlayerMagicSystem : MonoBehaviour
     private void Start()
     {
         hapticsController = GetComponent<HapticsController>();
-        hand = hand.GetComponent<Animator>();
+        //hand = hand.GetComponent<Animator>();
 
         actions.Add("ignis", Fireball);
         actions.Add("gelu", Icespike);
@@ -165,11 +166,11 @@ public class PlayerMagicSystem : MonoBehaviour
                 currentMana -= spellToCast.SpellToCast.ManaCost;
                 currentCastTimer = 0;
                 currentManaRechargeTimer = 0;
-                //if (hand.isActiveAndEnabled == true)
-                //{
-                //    Debug.Log("HANDS");
-                //    hand.Play("cast_spell"); //Play hand animation when casting spell -- might not work
-                //}
+                /*if (hand.isActiveAndEnabled == true)
+                {
+                    Debug.Log("HANDS");
+                    hand.Play("cast_spell"); //Play hand animation when casting spell -- might not work
+                }*/
 
                 Instantiate(spellToCast, castPoint.position, castPoint.rotation);
             }
@@ -186,11 +187,11 @@ public class PlayerMagicSystem : MonoBehaviour
     {
         playerHealth = player.GetComponent<PlayerHealthComponent>();
         bool isHoldingWand = wand.GetComponent<UpdateCastPoint>().isHolding;
-        Debug.Log(isHoldingWand);
+        //Debug.Log(isHoldingWand);
         if (!isHoldingWand)
         {
             playerHealth.TakeSpellDamage();
-            hapticsController.SendHaptics(.2f, .5f);
+            hapticsController.SendHaptics(rHandController, .2f, .5f);
         }
 
 

@@ -48,7 +48,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha: 0.19
+    - _Alpha: 0.04
     - _Alpha_Clip: 0
     - _Outline: 1
     - _OutlinePower: 5

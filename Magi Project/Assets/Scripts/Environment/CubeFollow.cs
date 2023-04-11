@@ -19,13 +19,17 @@ public class CubeFollow : MonoBehaviour
     [SerializeField] float yPos;
     [SerializeField] float zPos;
     [SerializeField] string slotTag;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
         defaultLocation = transform.localPosition;
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+        transform.localPosition = defaultLocation;
+    }
+
     void Update()
     {
         if (isFollowing)
@@ -54,6 +58,7 @@ public class CubeFollow : MonoBehaviour
             if (!isLocked)
             {
                 Cube.transform.position = other.transform.position;
+                other.GetComponent<MeshRenderer>().enabled = false;
                 DisableGrabbable();
             }
             else

@@ -55,10 +55,17 @@ public class Spell : MonoBehaviour
 
                 // Play hit sound
             }
+            //If Ignis hits a destructable object
             else if (other.gameObject.CompareTag("destructable") && gameObject.tag == "fireball")
             {
                 BurnableScript burnScript = other.gameObject.GetComponent<BurnableScript>();
                 burnScript.isBurning = true;
+            }
+            //If Gelu hits a freezable object
+            else if(other.gameObject.CompareTag("freezeable") && gameObject.tag == "gelu")
+            {
+                FreezableScript freezeSript = other.gameObject.GetComponent<FreezableScript>();
+                freezeSript.isFrozen = true;
             }
             Destroy(this.gameObject);
 

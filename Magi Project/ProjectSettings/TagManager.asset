@@ -11,6 +11,9 @@ TagManager:
   - PuzzleSlot1
   - PuzzleSlot2
   - PuzzleSlot3
+  - freezeable
+  - gelu
+  - empty
   layers:
   - Default
   - TransparentFX

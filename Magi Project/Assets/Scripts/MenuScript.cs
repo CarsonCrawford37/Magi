@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class MenuScript : MonoBehaviour
 {
-    [SerializeField] GameObject MenuObj;
-    [SerializeField] GameObject OptionsObj;
-    [SerializeField] GameObject rightHandRay;
+    public GameObject MenuObj;
+    public GameObject OptionsObj;
+    public GameObject rightHandRay;
+
+    public AudioSource open;
+    public AudioSource close;
 
 /*    private void Start()
     {
@@ -20,11 +23,13 @@ public class MenuScript : MonoBehaviour
             MenuObj.SetActive(true);
             OptionsObj.SetActive(false);
             rightHandRay.SetActive(false);
+            close.Play();
         }
         else
         {
             gameObject.SetActive(true);
-            rightHandRay.SetActive(true); ;
+            rightHandRay.SetActive(true); 
+            open.Play();
         }
     }
 }

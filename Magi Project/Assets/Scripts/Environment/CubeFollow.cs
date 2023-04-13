@@ -8,6 +8,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class CubeFollow : MonoBehaviour
 {
     public GameObject Cube;
+    public SymbolActivated floorSymbol;
+    public MeshRenderer floorSymbolMat;
 
     private bool isFollowing = false;
     private bool letGo = false;
@@ -15,10 +17,10 @@ public class CubeFollow : MonoBehaviour
 
     private Vector3 defaultLocation;
 
-    [SerializeField] float xPos;
-    [SerializeField] float yPos;
-    [SerializeField] float zPos;
-    [SerializeField] string slotTag;
+    public float xPos;
+    public float yPos;
+    public float zPos;
+    public string slotTag;
 
     private void Awake()
     {
@@ -60,6 +62,8 @@ public class CubeFollow : MonoBehaviour
                 Cube.transform.position = other.transform.position;
                 other.GetComponent<MeshRenderer>().enabled = false;
                 DisableGrabbable();
+                floorSymbol.isActivated = true;
+                floorSymbolMat.material.EnableKeyword("_EMISSION");
             }
             else
             {

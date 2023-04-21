@@ -329,6 +329,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cube: {fileID: 719077017}
+  floorSymbol: {fileID: 0}
+  floorSymbolMat: {fileID: 0}
   xPos: 0
   yPos: -0.3
   zPos: 0.75
@@ -615,17 +617,17 @@ PrefabInstance:
     - target: {fileID: 2563806344868839427, guid: 5ab2aff8c2546174a846b83ebfb8d452,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.000010672
       objectReference: {fileID: 0}
     - target: {fileID: 2563806344868839427, guid: 5ab2aff8c2546174a846b83ebfb8d452,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.33984
       objectReference: {fileID: 0}
     - target: {fileID: 2563806344868839427, guid: 5ab2aff8c2546174a846b83ebfb8d452,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.00029839
       objectReference: {fileID: 0}
     - target: {fileID: 2563806344868839427, guid: 5ab2aff8c2546174a846b83ebfb8d452,
         type: 3}
@@ -662,25 +664,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2602730064079466864, guid: 5ab2aff8c2546174a846b83ebfb8d452,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2602730064079466866, guid: 5ab2aff8c2546174a846b83ebfb8d452,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2945258386590833337, guid: 5ab2aff8c2546174a846b83ebfb8d452,
         type: 3}
       propertyPath: m_Name
       value: Ignis
-      objectReference: {fileID: 0}
-    - target: {fileID: 2945258386590833337, guid: 5ab2aff8c2546174a846b83ebfb8d452,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ab2aff8c2546174a846b83ebfb8d452, type: 3}
@@ -953,6 +940,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cube: {fileID: 7028384}
+  floorSymbol: {fileID: 0}
+  floorSymbolMat: {fileID: 0}
   xPos: 0
   yPos: -0.3
   zPos: 0.75
@@ -1093,17 +1082,17 @@ PrefabInstance:
     - target: {fileID: 6298994675105820745, guid: 60b1458bad451a24cabde19ab71d2915,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.158
+      value: -0.264
       objectReference: {fileID: 0}
     - target: {fileID: 6298994675105820745, guid: 60b1458bad451a24cabde19ab71d2915,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.06
+      value: -0.087
       objectReference: {fileID: 0}
     - target: {fileID: 6298994675105820745, guid: 60b1458bad451a24cabde19ab71d2915,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.015
+      value: 0.047
       objectReference: {fileID: 0}
     - target: {fileID: 6298994675105820745, guid: 60b1458bad451a24cabde19ab71d2915,
         type: 3}
@@ -1209,6 +1198,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.012893871
+      objectReference: {fileID: 0}
+    - target: {fileID: 8924775687655630141, guid: 60b1458bad451a24cabde19ab71d2915,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8994782266274807041, guid: 60b1458bad451a24cabde19ab71d2915,
         type: 3}
@@ -2078,7 +2072,7 @@ MonoBehaviour:
   health: 0
   Health: {fileID: 195229056}
   Mana: {fileID: 195229055}
-  fireball: {fileID: 8766845052362996337, guid: 20dac73594f1efb43ad44808b83ac151,
+  fireball: {fileID: 4287914671509580784, guid: 5ab2aff8c2546174a846b83ebfb8d452,
     type: 3}
   iceSpike: {fileID: 4496983375130789053, guid: d6a5142e3f97051488600ba631b4d5e8,
     type: 3}
@@ -2088,7 +2082,7 @@ MonoBehaviour:
   timeToWaitForRecharge: 1
   timeBetweenCasts: 0.25
   castPoint: {fileID: 209264812}
-  rHandController: {fileID: 0}
+  rHandController: {fileID: 1877811844}
 --- !u!1 &810205300
 GameObject:
   m_ObjectHideFlags: 0
@@ -2251,6 +2245,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cube: {fileID: 1743550715}
+  floorSymbol: {fileID: 0}
+  floorSymbolMat: {fileID: 0}
   xPos: -0.75
   yPos: -0.3
   zPos: 0
@@ -2542,6 +2538,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cube: {fileID: 1743550715}
+  floorSymbol: {fileID: 0}
+  floorSymbolMat: {fileID: 0}
   xPos: 0.75
   yPos: -0.3
   zPos: 0
@@ -3064,6 +3062,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cube: {fileID: 7028384}
+  floorSymbol: {fileID: 0}
+  floorSymbolMat: {fileID: 0}
   xPos: 0.75
   yPos: -0.3
   zPos: 0
@@ -3194,6 +3194,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cube: {fileID: 1743550715}
+  floorSymbol: {fileID: 0}
+  floorSymbolMat: {fileID: 0}
   xPos: 0
   yPos: -0.3
   zPos: 0.75
@@ -3685,6 +3687,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cube: {fileID: 7028384}
+  floorSymbol: {fileID: 0}
+  floorSymbolMat: {fileID: 0}
   xPos: 0
   yPos: -0.3
   zPos: -0.75
@@ -3740,6 +3744,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cube: {fileID: 719077017}
+  floorSymbol: {fileID: 0}
+  floorSymbolMat: {fileID: 0}
   xPos: -0.75
   yPos: -0.3
   zPos: 0
@@ -4177,6 +4183,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cube: {fileID: 1743550715}
+  floorSymbol: {fileID: 0}
+  floorSymbolMat: {fileID: 0}
   xPos: 0
   yPos: -0.3
   zPos: -0.75
@@ -4590,6 +4598,16 @@ PrefabInstance:
       propertyPath: defaultSpellCastPoint
       value: 
       objectReference: {fileID: 948049066}
+    - target: {fileID: 5346347835804277738, guid: d2ae037a6fe943849b28082de2c15419,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0102
+      objectReference: {fileID: 0}
+    - target: {fileID: 5346347835804277738, guid: d2ae037a6fe943849b28082de2c15419,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1577
+      objectReference: {fileID: 0}
     - target: {fileID: 5346347835804277739, guid: d2ae037a6fe943849b28082de2c15419,
         type: 3}
       propertyPath: m_Layer
@@ -4855,6 +4873,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cube: {fileID: 719077017}
+  floorSymbol: {fileID: 0}
+  floorSymbolMat: {fileID: 0}
   xPos: 0
   yPos: -0.3
   zPos: -0.75
@@ -5346,6 +5366,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cube: {fileID: 7028384}
+  floorSymbol: {fileID: 0}
+  floorSymbolMat: {fileID: 0}
   xPos: -0.75
   yPos: -0.3
   zPos: 0
@@ -5450,6 +5472,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f83a1d86c53ab34fb3cfdeb4fd90d58, type: 3}
+--- !u!114 &1877811844 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2081785749, guid: 60b1458bad451a24cabde19ab71d2915,
+    type: 3}
+  m_PrefabInstance: {fileID: 195229053}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 451b2471ea299de478a295ae5d56b6a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1955167432
 GameObject:
   m_ObjectHideFlags: 0
@@ -5501,6 +5535,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cube: {fileID: 719077017}
+  floorSymbol: {fileID: 0}
+  floorSymbolMat: {fileID: 0}
   xPos: 0.75
   yPos: -0.3
   zPos: 0
@@ -5736,6 +5772,7 @@ GameObject:
   - component: {fileID: 2078458925}
   - component: {fileID: 2078458924}
   - component: {fileID: 2078458928}
+  - component: {fileID: 2078458929}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -5906,6 +5943,19 @@ MonoBehaviour:
   m_Teleporting:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &2078458929
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078458923}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 10, y: 0.03597181, z: 10}
+  m_Center: {x: 0, y: -0.017985905, z: 0}
 --- !u!1 &2088922744
 GameObject:
   m_ObjectHideFlags: 0

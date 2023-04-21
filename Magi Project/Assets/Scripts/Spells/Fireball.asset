@@ -17,7 +17,7 @@ MonoBehaviour:
   ManaCost: 25
   Lifetime: 2
   Speed: 15
-  SpellRadius: 0.5
+  SpellRadius: 0.00777446
   HitNoise: {fileID: 8300000, guid: 1760f786104cf8f438d3f673d7e52a5d, type: 3}
   HitParticleSystem: {fileID: 1686909513578095382, guid: 0ae9063f888bb7449896c58178c56ec0,
     type: 3}

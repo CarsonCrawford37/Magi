@@ -37,7 +37,7 @@ public class ElevatorScript : MonoBehaviour
             elevatorLight.enabled = true;
         }
 
-        if (/*symbolsActivated == 3 &&*/ playerIsInElevator)
+        if (symbolsActivated == 3 && playerIsInElevator)
         {
             animator.enabled = true;
         }

@@ -67,7 +67,7 @@ public class PlayerMagicSystem : MonoBehaviour
         //hand = hand.GetComponent<Animator>();
 
         actions.Add("ignis", Fireball);
-        actions.Add("gelu", Icespike);
+        actions.Add("duratus", Icespike);
         //actions.Add("lux", Light);
 
         keywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());

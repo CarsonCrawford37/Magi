@@ -15,12 +15,12 @@ PrefabInstance:
     - target: {fileID: 4744153427108500750, guid: 8846bbd1a4769ac41a103f379033884c,
         type: 3}
       propertyPath: m_Name
-      value: ignis
+      value: ignis(old)
       objectReference: {fileID: 0}
     - target: {fileID: 4744153427108500750, guid: 8846bbd1a4769ac41a103f379033884c,
         type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4744153427108500750, guid: 8846bbd1a4769ac41a103f379033884c,
         type: 3}

@@ -27,6 +27,13 @@ public class Spell : MonoBehaviour
         Destroy(this.gameObject, SpellToCast.Lifetime);
     }
 
+    private void Start()
+    {
+        AudioSource spellAudio = GetComponent<AudioSource>();
+        spellAudio.pitch = Random.Range(0.95f, 1.05f);
+        spellAudio.Play();
+    }
+
     private void Update()
     {
         // Moves the projectile forward
@@ -38,9 +45,10 @@ public class Spell : MonoBehaviour
         //Apply spell effects to whatever we hit
         //Apply hit particle effects
         //Apply sound effects
-
         if (!other.gameObject.CompareTag("Player"))
         {
+            Debug.Log(other.name);
+
             // If projectile hits a gameobject tagged with enemy, remove health based off of damage from spell
             if (other.gameObject.CompareTag("Enemy"))
             {

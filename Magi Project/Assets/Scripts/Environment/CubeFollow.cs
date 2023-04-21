@@ -36,7 +36,7 @@ public class CubeFollow : MonoBehaviour
     {
         if (isFollowing)
         {
-            Cube.transform.position = new Vector3(transform.localPosition.x + xPos, transform.localPosition.y + yPos, transform.localPosition.z + zPos);
+            Cube.transform.localPosition = new Vector3(transform.localPosition.x + xPos, transform.localPosition.y + yPos, transform.localPosition.z + zPos);
         }
     }
 
@@ -59,6 +59,8 @@ public class CubeFollow : MonoBehaviour
         {
             if (!isLocked)
             {
+                Cube.GetComponent<BoxCollider>().enabled = false;
+                //Cube.GetComponent <Rigidbody>().freezeRotation = true;
                 Cube.transform.position = other.transform.position;
                 other.GetComponent<MeshRenderer>().enabled = false;
                 DisableGrabbable();

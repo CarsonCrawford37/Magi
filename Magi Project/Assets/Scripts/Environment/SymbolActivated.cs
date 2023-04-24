@@ -5,11 +5,20 @@ using UnityEngine;
 public class SymbolActivated : MonoBehaviour
 {
     public bool isActivated = false;
-/*    private void Update()
+
+    private void Update()
     {
         if (isActivated)
         {
-            Debug.Log(name + " activated");
+            GetComponent<AudioSource>().enabled = true;
         }
     }
-*/}
+    /*    private void Update()
+        {
+            if (isActivated)
+            {
+                Debug.Log(name + " activated");
+            }
+        }
+    */
+}

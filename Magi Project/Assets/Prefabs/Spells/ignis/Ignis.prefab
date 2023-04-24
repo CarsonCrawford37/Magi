@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2602730064079466865}
   - component: {fileID: 2602730064079466867}
   - component: {fileID: 2602730064079466866}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IgnisSpell
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 4287914671509580784}
   - component: {fileID: 484377603332018552}
   - component: {fileID: 3154759523219048954}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ignis
   m_TagString: fireball
   m_Icon: {fileID: 0}
@@ -435,7 +435,7 @@ GameObject:
   - component: {fileID: 3159817951816856470}
   - component: {fileID: 4169444372858220928}
   - component: {fileID: 7396899488642949413}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -7,6 +7,8 @@ public class ElevatorScript : MonoBehaviour
 {
     public List<SymbolActivated> symbols;
     public Light elevatorLight;
+    public AudioSource source;
+
 
     private bool playerIsInElevator = false;
     private int symbolsActivated = 0;
@@ -32,7 +34,7 @@ public class ElevatorScript : MonoBehaviour
             }
         }
 
-        if(symbolsActivated == 3)
+        if (symbolsActivated == 3)
         {
             elevatorLight.enabled = true;
         }
@@ -40,10 +42,14 @@ public class ElevatorScript : MonoBehaviour
         if (symbolsActivated == 3 && playerIsInElevator)
         {
             animator.enabled = true;
+            source.Play();
+
         }
         else
         {
             animator.enabled = false;
+            source.Pause();
+
         }
     }
 

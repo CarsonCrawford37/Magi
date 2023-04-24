@@ -52,7 +52,7 @@ Material:
     - _Alpha_Clip: 0
     - _Outline: 1
     - _OutlinePower: 5
-    - _Outline_Power: 1
+    - _Outline_Power: 5
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:

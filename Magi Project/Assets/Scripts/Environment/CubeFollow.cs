@@ -63,6 +63,7 @@ public class CubeFollow : MonoBehaviour
                 //Cube.GetComponent <Rigidbody>().freezeRotation = true;
                 Cube.transform.position = other.transform.position;
                 other.GetComponent<MeshRenderer>().enabled = false;
+                other.GetComponent<AudioSource>().Play();
                 DisableGrabbable();
                 floorSymbol.isActivated = true;
                 floorSymbolMat.material.EnableKeyword("_EMISSION");

@@ -30,7 +30,7 @@ public class Spell : MonoBehaviour
     private void Start()
     {
         AudioSource spellAudio = GetComponent<AudioSource>();
-        spellAudio.pitch = Random.Range(0.95f, 1.05f);
+        spellAudio.pitch = Random.Range(0.80f, 1.3f);
         spellAudio.Play();
     }
 

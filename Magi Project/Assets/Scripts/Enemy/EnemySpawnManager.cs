@@ -8,7 +8,7 @@ public class EnemySpawnManager : MonoBehaviour
     public bool enemyDied;
 
     public ParticleSystem ps;
-    private float timeToWait = 5f;
+   // private float timeToWait = 5f;
 
     void Update()
     {

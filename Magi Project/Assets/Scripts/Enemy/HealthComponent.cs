@@ -10,7 +10,7 @@ public class HealthComponent : MonoBehaviour
     private Animation anim;
     public ParticleSystem ps;
 
-    private float timeToWait = 5f;
+    //private float timeToWait = 5f;
 
     private void Awake()
     {

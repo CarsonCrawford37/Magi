@@ -10,15 +10,17 @@ public class ElevatorScript : MonoBehaviour
     public AudioSource source;
 
 
-    private bool playerIsInElevator = false;
-    private int symbolsActivated = 0;
-    private Animator animator;
+    bool _playerIsInElevator = false;
+    bool _isPlaying = false;
+    int _symbolsActivated = 0;
+    Animator _animator;
+
 
     //private Vector3 elevatorPos;// = new Vector3 (1, 1, 1);
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -29,35 +31,40 @@ public class ElevatorScript : MonoBehaviour
         {
             if (symbol.isActivated)
             {
-                symbolsActivated++;
+                _symbolsActivated++;
                 symbols.Remove(symbol);
             }
         }
 
-        if (symbolsActivated == 3)
+        if (_symbolsActivated == 3)
         {
+            if(_playerIsInElevator)
+            {
+                _animator.enabled = true;
+                if (!_isPlaying)
+                {
+                    _isPlaying = true;
+                    source.Play();
+                }
+            }
+            else
+            {
+                _animator.enabled = false;
+                if (_isPlaying)
+                {
+                    _isPlaying = false;
+                    source.Pause();
+                }
+            }
             elevatorLight.enabled = true;
-        }
-
-        if (symbolsActivated == 3 && playerIsInElevator)
-        {
-            animator.enabled = true;
-            source.Play();
-
-        }
-        else
-        {
-            animator.enabled = false;
-            source.Pause();
-
-        }
+        }       
     }
 
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            playerIsInElevator = true;
+            _playerIsInElevator = true;
         }
     }
 
@@ -65,7 +72,7 @@ public class ElevatorScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            playerIsInElevator = false;
+            _playerIsInElevator = false;
         }
     }
 }

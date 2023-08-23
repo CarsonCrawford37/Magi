@@ -62,7 +62,7 @@ public class CubeFollow : MonoBehaviour
                 other.GetComponent<AudioSource>().Play();
                 DisableGrabbable();
                 floorSymbol.isActivated = true;
-                floorSymbolMat.material.EnableKeyword("_EMISSION");
+                //floorSymbolMat.material.EnableKeyword("_EMISSION");
             }
             else
             {

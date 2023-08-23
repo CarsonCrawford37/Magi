@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -25,7 +26,6 @@ public class PlayerMagicSystem : MonoBehaviour
     //[SerializeField] private Spell lux;
     private Spell spellToCast;
 
-
     // MANA SYSTEM //
     [SerializeField] private float maxMana = 100f;
     [SerializeField] private float currentMana;
@@ -34,6 +34,7 @@ public class PlayerMagicSystem : MonoBehaviour
     private float currentManaRechargeTimer;
     [SerializeField] private float timeBetweenCasts = 0.25f;
     private float currentCastTimer;
+    private Coroutine _manaRechargeCoroutine;
 
     // HEALTH SYSTEM //
 
@@ -54,7 +55,7 @@ public class PlayerMagicSystem : MonoBehaviour
     private void Awake()
     {
         currentMana = maxMana;
-        
+
     }
 
     //When game starts, add spell phrases to dictionary and start listening for them
@@ -76,7 +77,7 @@ public class PlayerMagicSystem : MonoBehaviour
 
     private void Update()
     {
-        health = player.GetComponent<PlayerHealthComponent>().currentHealth;
+        //health = player.GetComponent<PlayerHealthComponent>().currentHealth;
 
         //Cast cooldown
         if (castingMagic)
@@ -89,15 +90,16 @@ public class PlayerMagicSystem : MonoBehaviour
         //Mana recharge
         if (currentMana < maxMana & !castingMagic)
         {
-            currentManaRechargeTimer += Time.deltaTime;
+            /*currentManaRechargeTimer += Time.deltaTime;
             if (currentManaRechargeTimer > timeToWaitForRecharge)
             {
                 currentMana += manaRechargeRate * Time.deltaTime;
                 if (currentMana > maxMana) currentMana = maxMana;
-            }
+            }*/
+            StartManaRecharge();
         }
 
-        if(health < 100)
+        if (health < 100)
             playerHealth.HealthRecharge();
 
 
@@ -128,27 +130,63 @@ public class PlayerMagicSystem : MonoBehaviour
         CastSpell();
     }
 
-   /* private void Light() //needs to toogle on and off
+    /* private void Light() //needs to toogle on and off
+     {
+         spellToCast = lux;
+         if (activeSpell == false)
+         {
+             Debug.Log("on");
+             activeSpell = true;
+             int i = 0;
+             while (i < 100 && activeSpell == true) //hasEnoughMana && activeSpell == true 
+             {
+                 Debug.Log("Spell casting");
+                 i++;
+                 //CastSpell();
+             }
+         }
+         else
+         {
+             Debug.Log("off");
+             activeSpell = false;
+         }
+     }*/
+
+    //Coroutine to recharge mana
+    private IEnumerator ManaRechargeCoroutine()
     {
-        spellToCast = lux;
-        if (activeSpell == false)
+        while (currentMana < maxMana && !castingMagic)
         {
-            Debug.Log("on");
-            activeSpell = true;
-            int i = 0;
-            while (i < 100 && activeSpell == true) //hasEnoughMana && activeSpell == true 
-            {
-                Debug.Log("Spell casting");
-                i++;
-                //CastSpell();
-            }
+            // Recharge the mana over time
+            currentMana += manaRechargeRate * Time.deltaTime;
+            currentMana = Mathf.Clamp(currentMana, 0f, maxMana);
+
+            // Wait for a short duration before recharging more
+            yield return new WaitForSeconds(timeToWaitForRecharge);
         }
-        else
+
+        // Coroutine finished or interrupted, reset the reference
+        _manaRechargeCoroutine = null;
+    }
+
+    // Method to start the mana recharge coroutine
+    private void StartManaRecharge()
+    {
+        if (_manaRechargeCoroutine == null)
         {
-            Debug.Log("off");
-            activeSpell = false;
+            _manaRechargeCoroutine = StartCoroutine(ManaRechargeCoroutine());
         }
-    }*/
+    }
+
+    // Method to stop the mana recharge coroutine
+    private void StopManaRecharge()
+    {
+        if (_manaRechargeCoroutine != null)
+        {
+            StopCoroutine(_manaRechargeCoroutine);
+            _manaRechargeCoroutine = null;
+        }
+    }
 
     //Method for when a spell is cast
     void CastSpell()
@@ -156,32 +194,38 @@ public class PlayerMagicSystem : MonoBehaviour
         hasEnoughMana = currentMana - spellToCast.SpellToCast.ManaCost >= 0f; //if not work put in update
 
         hand.Play("SpellCast");
-            if (!castingMagic && hasEnoughMana)
+        if (!hasEnoughMana)
+        {
+            hapticsController.SendHaptics(.3f, .7f);
+            return;
+        }
+
+        if (!castingMagic && hasEnoughMana)
+        {
+            HarmPlayer();
+            castingMagic = true;
+            currentMana -= spellToCast.SpellToCast.ManaCost;
+            currentCastTimer = 0;
+            currentManaRechargeTimer = 0;
+            /*if (hand.isActiveAndEnabled == true)
             {
-               HarmPlayer();
-                castingMagic = true;
-                currentMana -= spellToCast.SpellToCast.ManaCost;
-                currentCastTimer = 0;
-                currentManaRechargeTimer = 0;
-                /*if (hand.isActiveAndEnabled == true)
-                {
-                    Debug.Log("HANDS");
-                    hand.Play("cast_spell"); //Play hand animation when casting spell -- might not work
-                }*/
+                Debug.Log("HANDS");
+                hand.Play("cast_spell"); //Play hand animation when casting spell -- might not work
+            }*/
+            StopManaRecharge();
+            Instantiate(spellToCast, castPoint.position, castPoint.rotation);
+        }
 
-                Instantiate(spellToCast, castPoint.position, castPoint.rotation);
-            }
+       /* if (!hasEnoughMana)
+        {
+            hapticsController.SendHaptics(.3f, .7f);
+        }*/
 
-            if (!hasEnoughMana)
-            {
-                hapticsController.SendHaptics(.3f, .7f);
-            }
-
-        //}
     }
 
     void HarmPlayer()
     {
+        health = player.GetComponent<PlayerHealthComponent>().currentHealth;
         playerHealth = player.GetComponent<PlayerHealthComponent>();
         bool isHoldingWand = wand.GetComponent<UpdateCastPoint>().isHolding;
         //Debug.Log(isHoldingWand);

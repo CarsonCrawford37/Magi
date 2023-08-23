@@ -11,6 +11,7 @@ public class SymbolActivated : MonoBehaviour
         if (isActivated)
         {
             GetComponent<AudioSource>().enabled = true;
+            GetComponent<MeshRenderer>().material.EnableKeyword("EMISSION");
         }
     }
     /*    private void Update()

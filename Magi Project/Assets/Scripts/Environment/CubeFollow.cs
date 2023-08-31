@@ -55,13 +55,18 @@ public class CubeFollow : MonoBehaviour
         {
             if (!isLocked)
             {
-                Cube.GetComponent<BoxCollider>().enabled = false;
-                //Cube.GetComponent <Rigidbody>().freezeRotation = true;
+                //Cube.GetComponent<BoxCollider>().enabled = false;
+                Cube.GetComponent <Rigidbody>().freezeRotation = true;
                 Cube.transform.position = other.transform.position;
-                other.GetComponent<MeshRenderer>().enabled = false;
-                other.GetComponent<AudioSource>().Play();
                 DisableGrabbable();
-                floorSymbol.isActivated = true;
+
+                if (other.GetComponent<MeshRenderer>() != null && other.GetComponent<AudioSource>() != null)
+                {
+                    other.GetComponent<MeshRenderer>().enabled = false;
+                    other.GetComponent<AudioSource>().Play();
+                    floorSymbol.isActivated = true;
+                }
+
                 //floorSymbolMat.material.EnableKeyword("_EMISSION");
             }
             else

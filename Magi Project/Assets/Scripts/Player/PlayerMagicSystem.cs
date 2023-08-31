@@ -14,7 +14,7 @@ public class PlayerMagicSystem : MonoBehaviour
     [SerializeField] GameObject wand;
 
     public float health;
-    PlayerHealthComponent playerHealth;
+    public PlayerHealthComponent playerHealth;
 
     // PLAYER UI //
     public TextMeshProUGUI Health;
@@ -77,7 +77,7 @@ public class PlayerMagicSystem : MonoBehaviour
 
     private void Update()
     {
-        //health = player.GetComponent<PlayerHealthComponent>().currentHealth;
+        health = player.GetComponent<PlayerHealthComponent>().currentHealth;
 
         //Cast cooldown
         if (castingMagic)
@@ -90,6 +90,7 @@ public class PlayerMagicSystem : MonoBehaviour
         //Mana recharge
         if (currentMana < maxMana & !castingMagic)
         {
+
             /*currentManaRechargeTimer += Time.deltaTime;
             if (currentManaRechargeTimer > timeToWaitForRecharge)
             {
@@ -191,10 +192,39 @@ public class PlayerMagicSystem : MonoBehaviour
     //Method for when a spell is cast
     void CastSpell()
     {
-        hasEnoughMana = currentMana - spellToCast.SpellToCast.ManaCost >= 0f; //if not work put in update
+        //Checks if the player has enough mana to cast the spell 
+        hasEnoughMana = currentMana - spellToCast.SpellToCast.ManaCost >= 0f;
 
         hand.Play("SpellCast");
-        if (!hasEnoughMana)
+
+        if (!castingMagic)
+        {
+            if(hasEnoughMana)
+            {
+                //Deduct mana cost and reset timers
+                currentMana -= spellToCast.SpellToCast.ManaCost;
+                currentCastTimer = 0;
+                currentManaRechargeTimer = 0;
+
+                //Stop mana recharge while casting
+                StopManaRecharge();
+
+                //Instantiate the spell
+                Instantiate(spellToCast, castPoint.position, castPoint.rotation);
+
+                //Harm the player
+                HarmPlayer();
+            }
+            else
+            {
+                //Player does not have enough mana, send haptic feedback
+                hapticsController.SendHaptics(.3f, .7f);
+            }
+
+            castingMagic = true;
+        }
+
+       /* if (!hasEnoughMana)
         {
             hapticsController.SendHaptics(.3f, .7f);
             return;
@@ -207,14 +237,14 @@ public class PlayerMagicSystem : MonoBehaviour
             currentMana -= spellToCast.SpellToCast.ManaCost;
             currentCastTimer = 0;
             currentManaRechargeTimer = 0;
-            /*if (hand.isActiveAndEnabled == true)
+            *//*if (hand.isActiveAndEnabled == true)
             {
                 Debug.Log("HANDS");
                 hand.Play("cast_spell"); //Play hand animation when casting spell -- might not work
-            }*/
+            }*//*
             StopManaRecharge();
             Instantiate(spellToCast, castPoint.position, castPoint.rotation);
-        }
+        }*/
 
        /* if (!hasEnoughMana)
         {

@@ -24236,8 +24236,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8f5ac43498a39c74997c61ade177fa89, type: 2}
-    m_RemovedComponents:
-    - {fileID: 2614202996946388435, guid: 4dbaedcdc204e82448f4989d76c23758, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -27632,8 +27631,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6d50bd803b985e346801398d2b0098a5, type: 2}
-    m_RemovedComponents:
-    - {fileID: 2614202996946388435, guid: 4dbaedcdc204e82448f4989d76c23758, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -29396,6 +29394,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2614202995224496122, guid: 4dbaedcdc204e82448f4989d76c23758,
         type: 3}
+      propertyPath: slotTag
+      value: PuzzleSlot1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202995224496122, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -29413,6 +29416,11 @@ PrefabInstance:
         type: 3}
       propertyPath: xPos
       value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202995884338920, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: slotTag
+      value: PuzzleSlot1
       objectReference: {fileID: 0}
     - target: {fileID: 2614202995884338920, guid: 4dbaedcdc204e82448f4989d76c23758,
         type: 3}
@@ -29456,6 +29464,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2614202996496463853, guid: 4dbaedcdc204e82448f4989d76c23758,
         type: 3}
+      propertyPath: slotTag
+      value: PuzzleSlot1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202996496463853, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -29491,6 +29504,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2614202997065076351, guid: 4dbaedcdc204e82448f4989d76c23758,
         type: 3}
+      propertyPath: slotTag
+      value: PuzzleSlot1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202997065076351, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -29514,8 +29532,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f0a80b65fc603344f980e7e325ca6e72, type: 2}
-    m_RemovedComponents:
-    - {fileID: 2614202996946388435, guid: 4dbaedcdc204e82448f4989d76c23758, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -30958,8 +30975,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4dab7ff364fddcb45979d16ed6aa7078, type: 2}
-    m_RemovedComponents:
-    - {fileID: 2614202996946388435, guid: 4dbaedcdc204e82448f4989d76c23758, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -31913,8 +31929,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 993b437ec9e8dd34fbada0347f2c879c, type: 2}
-    m_RemovedComponents:
-    - {fileID: 2614202996946388435, guid: 4dbaedcdc204e82448f4989d76c23758, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -33864,8 +33879,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: PuzzlePiece
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2614202996946388435, guid: 4dbaedcdc204e82448f4989d76c23758, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -43026,8 +43040,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 30ae621e29e5bb546ba83c1ed031da04, type: 2}
-    m_RemovedComponents:
-    - {fileID: 2614202996946388435, guid: 4dbaedcdc204e82448f4989d76c23758, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -46176,8 +46189,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3effc181ac8676f4f93afcd33e6fc493, type: 2}
-    m_RemovedComponents:
-    - {fileID: 2614202996946388435, guid: 4dbaedcdc204e82448f4989d76c23758, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -46381,8 +46393,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: eb37507cdc0eb4346b54cfe4da26c072, type: 2}
-    m_RemovedComponents:
-    - {fileID: 2614202996946388435, guid: 4dbaedcdc204e82448f4989d76c23758, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -48290,8 +48301,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 45a57d8cf5a6f2b428980d669a85af30, type: 2}
-    m_RemovedComponents:
-    - {fileID: 2614202996946388435, guid: 4dbaedcdc204e82448f4989d76c23758, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -54786,8 +54796,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 79a0bbb1d8009d040a39fffe85822177, type: 2}
-    m_RemovedComponents:
-    - {fileID: 2614202996946388435, guid: 4dbaedcdc204e82448f4989d76c23758, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

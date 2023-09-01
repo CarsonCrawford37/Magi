@@ -11,7 +11,7 @@ public class SymbolActivated : MonoBehaviour
         if (isActivated)
         {
             GetComponent<AudioSource>().enabled = true;
-            GetComponent<MeshRenderer>().material.EnableKeyword("EMISSION");
+            GetComponent<MeshRenderer>().material.EnableKeyword("EMISSION"); //Change this to modify the emission intensity instead of enabling it -- baked wont show
         }
     }
     /*    private void Update()

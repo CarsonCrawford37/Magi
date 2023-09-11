@@ -69,7 +69,7 @@ public class PlayerHealthComponent : MonoBehaviour
         }
 
         
-        Debug.Log("Player Health: " + currentHealth);
+        //Debug.Log("Player Health: " + currentHealth);
     }
 
     public void HealthRecharge()

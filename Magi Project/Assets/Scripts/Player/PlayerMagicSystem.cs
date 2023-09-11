@@ -9,24 +9,31 @@ using UnityEngine.Windows.Speech;
 public class PlayerMagicSystem : MonoBehaviour
 {
     // PLAYER STUFF //
+    [Header("OBJECTS")]
     [SerializeField] GameObject player;
     [SerializeField] private Animator hand;
     [SerializeField] GameObject wand;
 
-    public float health;
-    public PlayerHealthComponent playerHealth;
 
     // PLAYER UI //
+    [Header("UI")]
     public TextMeshProUGUI Health;
     public TextMeshProUGUI Mana;
 
     // SPELLS //
-    [SerializeField] private Spell fireball;
-    [SerializeField] private Spell iceSpike;
-    //[SerializeField] private Spell lux;
+    [Header("SPELLS")]
+    [SerializeField] private List<Spell> spells;
+    /*[SerializeField] private Spell fireball;
+    [SerializeField] private Spell iceSpike;*/
     private Spell spellToCast;
 
+    // HEALTH SYSTEM //
+    [Header("HEALTH")]
+    public float health;
+    public PlayerHealthComponent playerHealth;
+
     // MANA SYSTEM //
+    [Header("MANA")]
     [SerializeField] private float maxMana = 100f;
     [SerializeField] private float currentMana;
     [SerializeField] private float manaRechargeRate = 15f;
@@ -35,8 +42,6 @@ public class PlayerMagicSystem : MonoBehaviour
     [SerializeField] private float timeBetweenCasts = 0.25f;
     private float currentCastTimer;
     private Coroutine _manaRechargeCoroutine;
-
-    // HEALTH SYSTEM //
 
     [SerializeField] private Transform castPoint;
 
@@ -64,8 +69,8 @@ public class PlayerMagicSystem : MonoBehaviour
         hapticsController = GetComponent<HapticsController>();
         //hand = hand.GetComponent<Animator>();
 
-        actions.Add("ignis", Fireball);
-        actions.Add("duratus", Icespike);
+        actions.Add("ignis", Ignis);
+        actions.Add("duratus", Duratus);
         //actions.Add("lux", Light);
 
         keywordRecognizer = new KeywordRecognizer(actions.Keys.ToArray());
@@ -91,13 +96,13 @@ public class PlayerMagicSystem : MonoBehaviour
         if (currentMana < maxMana & !castingMagic)
         {
 
-            /*currentManaRechargeTimer += Time.deltaTime;
+            currentManaRechargeTimer += Time.deltaTime;
             if (currentManaRechargeTimer > timeToWaitForRecharge)
             {
                 currentMana += manaRechargeRate * Time.deltaTime;
                 if (currentMana > maxMana) currentMana = maxMana;
-            }*/
-            StartManaRecharge();
+            }
+            //StartManaRecharge();
         }
 
         if (health < 100)
@@ -117,44 +122,32 @@ public class PlayerMagicSystem : MonoBehaviour
     }
 
     //Method for when the fireball spell is called
-    private void Fireball()
+    private void Ignis()
     {
-        spellToCast = fireball;
-
+        foreach(Spell spell in spells){
+            if(spell.name == "Ignis")
+            {
+                spellToCast = spell;
+            }
+        }
         CastSpell();
     }
 
     //Method for when the ice spike spell is called
-    private void Icespike()
+    private void Duratus()
     {
-        spellToCast = iceSpike;
+        foreach (Spell spell in spells)
+        {
+            if (spell.name == "Duratus")
+            {
+                spellToCast = spell;
+            }
+        }
         CastSpell();
     }
 
-    /* private void Light() //needs to toogle on and off
-     {
-         spellToCast = lux;
-         if (activeSpell == false)
-         {
-             Debug.Log("on");
-             activeSpell = true;
-             int i = 0;
-             while (i < 100 && activeSpell == true) //hasEnoughMana && activeSpell == true 
-             {
-                 Debug.Log("Spell casting");
-                 i++;
-                 //CastSpell();
-             }
-         }
-         else
-         {
-             Debug.Log("off");
-             activeSpell = false;
-         }
-     }*/
-
     //Coroutine to recharge mana
-    private IEnumerator ManaRechargeCoroutine()
+    /*private IEnumerator ManaRechargeCoroutine()
     {
         while (currentMana < maxMana && !castingMagic)
         {
@@ -168,16 +161,16 @@ public class PlayerMagicSystem : MonoBehaviour
 
         // Coroutine finished or interrupted, reset the reference
         _manaRechargeCoroutine = null;
-    }
+    }*/
 
     // Method to start the mana recharge coroutine
-    private void StartManaRecharge()
+    /*private void StartManaRecharge()
     {
         if (_manaRechargeCoroutine == null)
         {
             _manaRechargeCoroutine = StartCoroutine(ManaRechargeCoroutine());
         }
-    }
+    }*/
 
     // Method to stop the mana recharge coroutine
     private void StopManaRecharge()
@@ -195,7 +188,7 @@ public class PlayerMagicSystem : MonoBehaviour
         //Checks if the player has enough mana to cast the spell 
         hasEnoughMana = currentMana - spellToCast.SpellToCast.ManaCost >= 0f;
 
-        hand.Play("SpellCast");
+        hand.SetTrigger("HandSpell");
 
         if (!castingMagic)
         {

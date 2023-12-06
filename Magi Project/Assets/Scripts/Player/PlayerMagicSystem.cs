@@ -124,6 +124,7 @@ public class PlayerMagicSystem : MonoBehaviour
     //Method for when the fireball spell is called
     private void Ignis()
     {
+        Debug.Log("Ignis spells chosen...");
         foreach(Spell spell in spells){
             if(spell.name == "Ignis")
             {
@@ -136,6 +137,8 @@ public class PlayerMagicSystem : MonoBehaviour
     //Method for when the ice spike spell is called
     private void Duratus()
     {
+        Debug.Log("Duratus spells chosen...");
+
         foreach (Spell spell in spells)
         {
             if (spell.name == "Duratus")

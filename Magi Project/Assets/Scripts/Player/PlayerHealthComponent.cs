@@ -5,12 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealthComponent : MonoBehaviour
 {
+    [Header("Health")]
     [SerializeField] private float maxHealth = 100f;
     public float currentHealth;
+
+    [Header("Recharge Time")]
     [SerializeField] private float healthRechargeRate = 15f;
     [SerializeField] private float timeToWaitForRecharge = 1f;
     private float currentHealthRechargeTimer;
 
+    [Header("Pass Out")]
+    public bool isPassedOut = false;
     [SerializeField] public Material hurtOverlay;
     public FadeToBlack blackScreen;
     private Color color;
@@ -24,12 +29,12 @@ public class PlayerHealthComponent : MonoBehaviour
 
     private void Update()
     {
-        if(currentHealth >= 56)
+        if (currentHealth >= 56)
         {
             color.a = 0f;
             hurtOverlay.color = color;
         }
-        else if(55 >= currentHealth && currentHealth >= 41)
+        else if (55 >= currentHealth && currentHealth >= 41)
         {
             color.a = .25f;
             hurtOverlay.color = color;
@@ -49,7 +54,7 @@ public class PlayerHealthComponent : MonoBehaviour
             color.a = 1.5f;
             hurtOverlay.color = color;
         }
-        else if(currentHealth <= 0)
+        else if (currentHealth <= 0)
         {
             color.a = 0f;
             hurtOverlay.color = color;
@@ -64,23 +69,42 @@ public class PlayerHealthComponent : MonoBehaviour
         currentHealth -= 15;
         if (currentHealth <= 0)
         {
+            isPassedOut = true;
             blackScreen.FadeOut();
             StartCoroutine(WaitForNextScene());
         }
 
-        
-        //Debug.Log("Player Health: " + currentHealth);
+
+        Debug.Log("Player Health: " + currentHealth);
     }
 
+    public void TakeSpellDamage(float damage)
+    {
+        color = hurtOverlay.color;
+        //Debug.Log(hurtOverlay.color);
+        currentHealth -= damage;
+        if (currentHealth <= 0)
+        {
+            isPassedOut = true;
+            blackScreen.FadeOut();
+            StartCoroutine(WaitForNextScene());
+        }
+
+
+        Debug.Log("Player Health: " + currentHealth);
+    }
     public void HealthRecharge()
     {
-        if (currentHealth < maxHealth)
+        if (!isPassedOut)
         {
-            currentHealthRechargeTimer += Time.deltaTime;
-            if (currentHealthRechargeTimer > timeToWaitForRecharge)
+            if (currentHealth < maxHealth)
             {
-                currentHealth += healthRechargeRate * Time.deltaTime;
-                if (currentHealth > maxHealth) currentHealth = maxHealth;
+                currentHealthRechargeTimer += Time.deltaTime;
+                if (currentHealthRechargeTimer > timeToWaitForRecharge)
+                {
+                    currentHealth += healthRechargeRate * Time.deltaTime;
+                    if (currentHealth > maxHealth) currentHealth = maxHealth;
+                }
             }
         }
     }

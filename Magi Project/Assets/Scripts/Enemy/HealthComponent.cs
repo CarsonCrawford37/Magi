@@ -21,15 +21,22 @@ public class HealthComponent : MonoBehaviour
     public void TakeDamage(float damageToApply)
     {
         currentHealth -= damageToApply;
-        anim.Play("Impact");
+        if (anim != null)
+        {
+            anim.Play("Impact");
+        }
+
         if (currentHealth <= 0)
         {
-            ParticleSystem psClone = Instantiate(ps, transform.position, Quaternion.Euler(0, 90, 0));
+            if (ps != null)
+            {
+                ParticleSystem psClone = Instantiate(ps, transform.position, Quaternion.Euler(0, 90, 0));
+                Destroy(psClone.gameObject, 5);
+            }
             //Destroy(gameObject);
             gameObject.SetActive(false);
             hasDied = true;
             currentHealth = maxHealth;
-            Destroy(psClone.gameObject, 5);
         }
 
         Debug.Log("Enemy Health: " + currentHealth);

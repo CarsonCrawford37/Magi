@@ -6,6 +6,7 @@ using UnityEngine.XR;
 public class EnemySpellSystem : MonoBehaviour
 {
     public GameObject hand;
+    public GameObject player;
     private bool _playerInSight;
 
     [Header("SPELLS")]
@@ -134,8 +135,8 @@ public class EnemySpellSystem : MonoBehaviour
         {
             _playerInSight = true;
             //transform.LookAt(other.transform);
-            transform.LookAt(other.transform.position);
-            hand.transform.LookAt(other.transform);
+            transform.LookAt(player.transform);
+            hand.transform.LookAt(player.transform);
         }
     }
 
@@ -143,6 +144,8 @@ public class EnemySpellSystem : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            hand.transform.rotation = Quaternion.Euler(0, 0, 0);
             _playerInSight = false;
         }
     }

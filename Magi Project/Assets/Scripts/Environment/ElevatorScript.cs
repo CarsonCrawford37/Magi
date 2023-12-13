@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class ElevatorScript : MonoBehaviour
 {
@@ -9,9 +11,12 @@ public class ElevatorScript : MonoBehaviour
     public Light elevatorLight;
     public AudioSource source;
 
+    public GameObject anchor;
+    public GameObject player;
 
     bool _playerIsInElevator = false;
     bool _isPlaying = false;
+    bool _startFade = false;
     int _symbolsActivated = 0;
     Animator _animator;
 
@@ -38,13 +43,21 @@ public class ElevatorScript : MonoBehaviour
 
         if (_symbolsActivated == 3)
         {
-            if(_playerIsInElevator)
+
+            if (_playerIsInElevator)
             {
+                player.transform.position = anchor.transform.position;
                 _animator.enabled = true;
                 if (!_isPlaying)
                 {
                     _isPlaying = true;
                     source.Play();
+                    StartCoroutine(AudioFade());
+                    if (_startFade)
+                    {
+                        source.volume = Mathf.Lerp(1.0f, 0.0f, Time.deltaTime * 10f);
+
+                    }
                 }
             }
             else
@@ -57,13 +70,14 @@ public class ElevatorScript : MonoBehaviour
                 }
             }
             elevatorLight.enabled = true;
-        }       
+        }
     }
 
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            //player = other.gameObject;
             _playerIsInElevator = true;
         }
     }
@@ -74,5 +88,11 @@ public class ElevatorScript : MonoBehaviour
         {
             _playerIsInElevator = false;
         }
+    }
+
+    IEnumerator AudioFade()
+    {
+        yield return new WaitForSeconds(3);
+        _startFade = true;
     }
 }

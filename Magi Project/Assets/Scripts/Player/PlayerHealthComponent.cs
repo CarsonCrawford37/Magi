@@ -11,7 +11,7 @@ public class PlayerHealthComponent : MonoBehaviour
 
     [Header("Recharge Time")]
     [SerializeField] private float healthRechargeRate = 15f;
-    [SerializeField] private float timeToWaitForRecharge = 1f;
+    [SerializeField] private float timeToWaitForRecharge = 2f;
     private float currentHealthRechargeTimer;
 
     [Header("Pass Out")]

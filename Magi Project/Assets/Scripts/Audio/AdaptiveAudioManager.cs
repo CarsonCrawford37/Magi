@@ -14,5 +14,7 @@ public class AdaptiveAudioManager : Singleton<AdaptiveAudioManager> {
         currentAdaptiveLevel = level;
 
         snapshotLevels[currentAdaptiveLevel-1].TransitionTo(transitionTime);
+
+
     }
 }

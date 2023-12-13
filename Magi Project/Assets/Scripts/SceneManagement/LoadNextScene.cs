@@ -22,8 +22,8 @@ public class LoadNextScene : MonoBehaviour
     }
     public IEnumerator WaitForNextScene()
     {
-        Debug.Log("Scene");
-        yield return new WaitForSeconds(4);
+        //Debug.Log("Scene");
+        yield return new WaitForSeconds(8);
         SceneManager.LoadScene("EndDemo");
     }
 

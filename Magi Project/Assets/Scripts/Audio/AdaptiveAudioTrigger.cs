@@ -18,11 +18,11 @@ public class AdaptiveAudioTrigger : MonoBehaviour {
     {
         switch (triggerLevel)
         {
-            case 0:
-            case 2:
+            //case 0:
+            case 1:
                 return Color.black;  //default is black
 
-            case 1:
+            case 2:
                 return Color.green;
 
             case 3:
@@ -38,7 +38,8 @@ public class AdaptiveAudioTrigger : MonoBehaviour {
     }
 
     void OnTriggerEnter(Collider collider)
-    {        
+    {
+        Debug.Log("Entered: " + triggerLevel);
         AdaptiveAudioManager.Instance.AdjustAudioLevel(triggerLevel);
     }
 

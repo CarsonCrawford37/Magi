@@ -40,7 +40,8 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos: []
-  m_VirtualRealitySplashScreen: {fileID: 0}
+  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 7ad0c054ada284949a9742258d12cd81,
+    type: 3}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
@@ -276,7 +277,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: eeb0ede360f55aa47870adae23948a31, type: 3}
+      m_Icon: {fileID: 2800000, guid: 7ad0c054ada284949a9742258d12cd81, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -793,7 +794,10 @@ PlayerSettings:
   webGLMemoryGeometricGrowthStep: 0.2
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Android: USE_INPUT_SYSTEM_POSE_CONTROL
+    Standalone: USE_INPUT_SYSTEM_POSE_CONTROL
+    Windows Store Apps: USE_INPUT_SYSTEM_POSE_CONTROL
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}

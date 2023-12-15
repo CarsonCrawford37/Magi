@@ -13,9 +13,9 @@ public class CubeFollow : MonoBehaviour
 
     private Vector3 defaultLocation;
 
-    public float xPos;
+    /*public float xPos;
     public float yPos;
-    public float zPos;
+    public float zPos;*/
     public string slotTag;
 
     private void Awake()
@@ -26,13 +26,14 @@ public class CubeFollow : MonoBehaviour
     void Start()
     {
         transform.localPosition = defaultLocation;
+        //Cube.transform.position = transform.parent;
     }
 
     void Update()
     {
         if (isFollowing)
         {
-            Cube.transform.localPosition = new Vector3(transform.localPosition.x + xPos, transform.localPosition.y + yPos, transform.localPosition.z + zPos);
+            //Cube.transform.localPosition = new Vector3(transform.localPosition.x + xPos, transform.localPosition.y + yPos, transform.localPosition.z + zPos);
         }
     }
 

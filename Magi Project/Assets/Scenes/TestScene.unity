@@ -435,9 +435,6 @@ MonoBehaviour:
   Cube: {fileID: 719077017}
   floorSymbol: {fileID: 0}
   floorSymbolMat: {fileID: 0}
-  xPos: 0
-  yPos: -0.3
-  zPos: 0.75
   slotTag: PuzzleSlot2
 --- !u!114 &69574617
 MonoBehaviour:
@@ -1145,9 +1142,6 @@ MonoBehaviour:
   Cube: {fileID: 7028384}
   floorSymbol: {fileID: 0}
   floorSymbolMat: {fileID: 0}
-  xPos: 0
-  yPos: -0.3
-  zPos: 0.75
   slotTag: PuzzleSlot1
 --- !u!4 &209264812 stripped
 Transform:
@@ -2551,9 +2545,6 @@ MonoBehaviour:
   Cube: {fileID: 1743550715}
   floorSymbol: {fileID: 0}
   floorSymbolMat: {fileID: 0}
-  xPos: -0.75
-  yPos: -0.3
-  zPos: 0
   slotTag: PuzzleSlot3
 --- !u!114 &883265775
 MonoBehaviour:
@@ -2905,9 +2896,6 @@ MonoBehaviour:
   Cube: {fileID: 1743550715}
   floorSymbol: {fileID: 0}
   floorSymbolMat: {fileID: 0}
-  xPos: 0.75
-  yPos: -0.3
-  zPos: 0
   slotTag: PuzzleSlot3
 --- !u!114 &914775471
 MonoBehaviour:
@@ -3776,9 +3764,6 @@ MonoBehaviour:
   Cube: {fileID: 7028384}
   floorSymbol: {fileID: 0}
   floorSymbolMat: {fileID: 0}
-  xPos: 0.75
-  yPos: -0.3
-  zPos: 0
   slotTag: PuzzleSlot1
 --- !u!1001 &995170523
 PrefabInstance:
@@ -3995,9 +3980,6 @@ MonoBehaviour:
   Cube: {fileID: 919132149497050040}
   floorSymbol: {fileID: 0}
   floorSymbolMat: {fileID: 0}
-  xPos: 0
-  yPos: 0
-  zPos: 0.85
   slotTag: PuzzleSlot1
 --- !u!114 &1256227649
 MonoBehaviour:
@@ -4325,9 +4307,6 @@ MonoBehaviour:
   Cube: {fileID: 1743550715}
   floorSymbol: {fileID: 0}
   floorSymbolMat: {fileID: 0}
-  xPos: 0
-  yPos: -0.3
-  zPos: 0.75
   slotTag: PuzzleSlot3
 --- !u!114 &1290997270
 MonoBehaviour:
@@ -4896,9 +4875,6 @@ MonoBehaviour:
   Cube: {fileID: 7028384}
   floorSymbol: {fileID: 0}
   floorSymbolMat: {fileID: 0}
-  xPos: 0
-  yPos: -0.3
-  zPos: -0.75
   slotTag: PuzzleSlot1
 --- !u!1 &1363169070
 GameObject:
@@ -4953,9 +4929,6 @@ MonoBehaviour:
   Cube: {fileID: 719077017}
   floorSymbol: {fileID: 0}
   floorSymbolMat: {fileID: 0}
-  xPos: -0.75
-  yPos: -0.3
-  zPos: 0
   slotTag: PuzzleSlot2
 --- !u!114 &1363169073
 MonoBehaviour:
@@ -5455,9 +5428,6 @@ MonoBehaviour:
   Cube: {fileID: 1743550715}
   floorSymbol: {fileID: 0}
   floorSymbolMat: {fileID: 0}
-  xPos: 0
-  yPos: -0.3
-  zPos: -0.75
   slotTag: PuzzleSlot3
 --- !u!114 &1607767131
 MonoBehaviour:
@@ -6220,9 +6190,6 @@ MonoBehaviour:
   Cube: {fileID: 719077017}
   floorSymbol: {fileID: 0}
   floorSymbolMat: {fileID: 0}
-  xPos: 0
-  yPos: -0.3
-  zPos: -0.75
   slotTag: PuzzleSlot2
 --- !u!114 &1799208379
 MonoBehaviour:
@@ -6791,9 +6758,6 @@ MonoBehaviour:
   Cube: {fileID: 7028384}
   floorSymbol: {fileID: 0}
   floorSymbolMat: {fileID: 0}
-  xPos: -0.75
-  yPos: -0.3
-  zPos: 0
   slotTag: PuzzleSlot1
 --- !u!1 &1854931208
 GameObject:
@@ -6957,9 +6921,6 @@ MonoBehaviour:
   Cube: {fileID: 719077017}
   floorSymbol: {fileID: 0}
   floorSymbolMat: {fileID: 0}
-  xPos: 0.75
-  yPos: -0.3
-  zPos: 0
   slotTag: PuzzleSlot2
 --- !u!114 &1955167435
 MonoBehaviour:
@@ -7704,24 +7665,259 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2605207112029259638, guid: 4dbaedcdc204e82448f4989d76c23758,
         type: 3}
+      propertyPath: m_MovementType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605207112029259638, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowOnDetach
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605207112029259638, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_TrackRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605207112029259638, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_VelocityScale
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605207112029259638, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_SmoothPosition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605207112029259638, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_SmoothRotation
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605207112029259638, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_AttachTransform
+      value: 
+      objectReference: {fileID: 2614202996853225993}
+    - target: {fileID: 2605207112029259638, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 1551890073}
+    - target: {fileID: 2605207112029259638, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ForceGravityOnDetach
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605207112029259638, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605207112029259638, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605207112029259638, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605207112029259638, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605207112029259638, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2605207112029259638, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202995224495111, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: cdf0a8e4466c0694e8b30287f5cbca59,
+        type: 2}
+    - target: {fileID: 2614202995224496121, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowOnDetach
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202995224496121, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_TrackRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202995224496121, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1551890073}
     - target: {fileID: 2614202995224496121, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ForceGravityOnDetach
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202995224496121, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202995224496121, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202995224496121, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202995224496121, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202995224496121, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202995224496121, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202995884338933, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: cdf0a8e4466c0694e8b30287f5cbca59,
+        type: 2}
+    - target: {fileID: 2614202996496463850, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: cdf0a8e4466c0694e8b30287f5cbca59,
+        type: 2}
+    - target: {fileID: 2614202996496463852, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowOnDetach
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202996496463852, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_TrackRotation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202996496463852, guid: 4dbaedcdc204e82448f4989d76c23758,
         type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1551890073}
     - target: {fileID: 2614202996496463852, guid: 4dbaedcdc204e82448f4989d76c23758,
         type: 3}
-      propertyPath: m_InteractionManager
+      propertyPath: m_ForceGravityOnDetach
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202996496463852, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202996496463852, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202996496463852, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202996496463852, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202996496463852, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202996496463852, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202996946388434, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_Material
       value: 
-      objectReference: {fileID: 1551890073}
+      objectReference: {fileID: 13400000, guid: cdf0a8e4466c0694e8b30287f5cbca59,
+        type: 2}
+    - target: {fileID: 2614202997065076348, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: cdf0a8e4466c0694e8b30287f5cbca59,
+        type: 2}
+    - target: {fileID: 2614202997065076350, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowOnDetach
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202997065076350, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_TrackRotation
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2614202997065076350, guid: 4dbaedcdc204e82448f4989d76c23758,
         type: 3}
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1551890073}
+    - target: {fileID: 2614202997065076350, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ForceGravityOnDetach
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202997065076350, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202997065076350, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202997065076350, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202997065076350, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202997065076350, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 2614202997065076350, guid: 4dbaedcdc204e82448f4989d76c23758,
+        type: 3}
+      propertyPath: m_ThrowSmoothingCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     - target: {fileID: 2920278795558259135, guid: 4dbaedcdc204e82448f4989d76c23758,
         type: 3}
       propertyPath: m_Name
@@ -7730,7 +7926,7 @@ PrefabInstance:
     - target: {fileID: 2920278795558259135, guid: 4dbaedcdc204e82448f4989d76c23758,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7740,6 +7936,12 @@ PrefabInstance:
 --- !u!4 &2614202996853225992 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2579782736468988677, guid: 4dbaedcdc204e82448f4989d76c23758,
+    type: 3}
+  m_PrefabInstance: {fileID: 2614202996853225991}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2614202996853225993 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2614202997161661402, guid: 4dbaedcdc204e82448f4989d76c23758,
     type: 3}
   m_PrefabInstance: {fileID: 2614202996853225991}
   m_PrefabAsset: {fileID: 0}

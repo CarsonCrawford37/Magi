@@ -116,14 +116,14 @@ Material:
     - _Distortion_Amount: 1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
-    - _Freeze_Amount: 0
+    - _Freeze_Amount: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Heatwave: 0.225
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _Outline: 1
+    - _Outline: 0
     - _OutlinePower: 5
     - _Outline_Power: 10
     - _Parallax: 0.005
